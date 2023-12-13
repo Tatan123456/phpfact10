@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 09-12-2023 a las 20:06:50
+-- Tiempo de generación: 13-12-2023 a las 01:12:11
 -- Versión del servidor: 8.0.31
 -- Versión de PHP: 8.0.26
 
@@ -94,6 +94,15 @@ CREATE TABLE IF NOT EXISTS `empleado` (
   PRIMARY KEY (`ID_Empleado`),
   KEY `ID_Tipo_Documento` (`ID_Tipo_Documento`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `empleado`
+--
+
+INSERT INTO `empleado` (`N_Documento_Empleado`, `ID_Tipo_Documento`, `Nom_Empleado`, `Telefono_Empleado`, `Email_Empleado`, `Direccion_Empleado`, `Nom_Usuario`, `Password`, `ID_Empleado`) VALUES
+(123456789, 5, 'TATAN', 3124887598, 'este@hotmail.com', 'calle 45 67 45', 'tatan123', '123', 1),
+(789456123, 3, 'Marcela', 3152894568, 'tambien@hotmail.es', 'diagona102 67 45', 'Marce', '159159', 2),
+(123123123, 5, 'Aura', 3124785962, 'cual@yahoo.com', 'calle 170 01 24', 'aura01', '123456', 3);
 
 -- --------------------------------------------------------
 
