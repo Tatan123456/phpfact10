@@ -22,6 +22,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
 if($_POST['METHOD']=='POST'){
     unset($_POST['METHOD']);
 
+    $ID_Empleado = $_POST['ID_Empleado'];
     $N_Documento_Empleado = $_POST['N_Documento_Empleado'];
     $ID_Tipo_Documento = $_POST['ID_Tipo_Documento'];
     $Nom_Empleado = $_POST['Nom_Empleado'];
@@ -32,7 +33,10 @@ if($_POST['METHOD']=='POST'){
     $Password = $_POST['Password'];
    
 
-    $query = "insert into empleado(N_Documento_Empleado, ID_Tipo_Documento, Nom_Empleado, Telefono_Empleado, Email_Empleado, Direccion_Empleado, Nom_Usuario, Password) values ('$N_Documento_Empleado', '$ID_Tipo_Documento', '$Nom_Empleado', '$Telefono_Empleado', '$Email_Empleado', '$Direccion_Empleado', '$Nom_Usuario', '$Password')";
+    $query = "insert into empleado (ID_Empleado, N_Documento_Empleado, ID_Tipo_Documento, Nom_Empleado, 
+    Telefono_Empleado, Email_Empleado, Direccion_Empleado, Nom_Usuario, Password) values 
+    ('$ID_Empleado', '$N_Documento_Empleado', '$ID_Tipo_Documento', '$Nom_Empleado', '$Telefono_Empleado', 
+    '$Email_Empleado', '$Direccion_Empleado', '$Nom_Usuario', '$Password')";
 
      
     $queryAutoIncrement = "select MAX(ID_Empleado) as ID_Empleado from empleado";

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 5.2.0
+- https://www.phpmyadmin.net
+-
+- Servidor: 127.0.0.1:3306
+- Tiempo de generación: 13-12-2023 a las 01:35:37
+- Versión del servidor: 8.0.31
+- Versión de PHP: 8.0.26
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="fact10" collation="utf8mb4_0900_ai_ci" charset="utf8mb4">
+            <pma:table name="anulacion_venta">
+                CREATE TABLE `anulacion_venta` (
+                  `ID_Venta` int DEFAULT NULL,
+                  `Fecha_Anulacion` date DEFAULT NULL,
+                  `Motivo_Anulacion` varchar(20) DEFAULT NULL,
+                  `ID_Anulacion` int NOT NULL,
+                  PRIMARY KEY (`ID_Anulacion`),
+                  KEY `ID_Venta` (`ID_Venta`)
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+            </pma:table>
+            <pma:table name="cliente">
+                CREATE TABLE `cliente` (
+                  `N_Documento_Cliente` double DEFAULT NULL,
+                  `ID_Tipo_Documento` int DEFAULT NULL,
+                  `Nom_Cliente` varchar(20) DEFAULT NULL,
+                  `Telefono_Cliente` double DEFAULT NULL,
+                  `Email_Cliente` varchar(20) DEFAULT NULL,
+                  `Barrio` varchar(20) DEFAULT NULL,
+                  `ID_Cliente` int NOT NULL,
+                  PRIMARY KEY (`ID_Cliente`),
+                  KEY `ID_Tipo_Documento` (`ID_Tipo_Documento`)
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+            </pma:table>
+            <pma:table name="detalle_venta">
+                CREATE TABLE `detalle_venta` (
+                  `Total` float DEFAULT NULL,
+                  `Cantidad` int DEFAULT NULL,
+                  `ID_Venta` int DEFAULT NULL,
+                  `ID_Producto` int DEFAULT NULL,
+                  `ID_Detalle` int NOT NULL,
+                  PRIMARY KEY (`ID_Detalle`),
+                  KEY `ID_Venta` (`ID_Venta`),
+                  KEY `ID_Producto` (`ID_Producto`)
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+            </pma:table>
+            <pma:table name="empleado">
+                CREATE TABLE `empleado` (
+                  `N_Documento_Empleado` double DEFAULT NULL,
+                  `ID_Tipo_Documento` int DEFAULT NULL,
+                  `Nom_Empleado` varchar(20) DEFAULT NULL,
+                  `Telefono_Empleado` double DEFAULT NULL,
+                  `Email_Empleado` varchar(20) DEFAULT NULL,
+                  `Direccion_Empleado` varchar(20) DEFAULT NULL,
+                  `Nom_Usuario` varchar(20) DEFAULT NULL,
+                  `Password` varchar(20) DEFAULT NULL,
+                  `ID_Empleado` int NOT NULL,
+                  PRIMARY KEY (`ID_Empleado`),
+                  KEY `ID_Tipo_Documento` (`ID_Tipo_Documento`)
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+            </pma:table>
+            <pma:table name="producto">
+                CREATE TABLE `producto` (
+                  `Nom_Producto` varchar(20) DEFAULT NULL,
+                  `ID_Proveedor` int DEFAULT NULL,
+                  `Precio_Unitario` float DEFAULT NULL,
+                  `Fecha_vencimiento` date DEFAULT NULL,
+                  `Cantidad` int DEFAULT NULL,
+                  `ID_Producto` int NOT NULL,
+                  PRIMARY KEY (`ID_Producto`),
+                  KEY `ID_Proveedor` (`ID_Proveedor`)
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+            </pma:table>
+            <pma:table name="proveedor">
+                CREATE TABLE `proveedor` (
+                  `ID_Proveedor` int NOT NULL,
+                  `Nom_Proveedor` varchar(20) DEFAULT NULL,
+                  `RUT` double DEFAULT NULL,
+                  `Direccion_Proveedor` varchar(20) DEFAULT NULL,
+                  `Email_Preveedor` varchar(20) DEFAULT NULL,
+                  `Telefono_Proveedor` double DEFAULT NULL,
+                  PRIMARY KEY (`ID_Proveedor`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+            </pma:table>
+            <pma:table name="tipo_documento">
+                CREATE TABLE `tipo_documento` (
+                  `ID_Tipo_Documento` int NOT NULL,
+                  `Nom_Tipo_Documento` varchar(20) DEFAULT NULL,
+                  PRIMARY KEY (`ID_Tipo_Documento`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+            </pma:table>
+            <pma:table name="venta">
+                CREATE TABLE `venta` (
+                  `ID_Cliente` int DEFAULT NULL,
+                  `ID_Empleado` int DEFAULT NULL,
+                  `ID_Venta` int NOT NULL,
+                  PRIMARY KEY (`ID_Venta`),
+                  KEY `ID_Cliente` (`ID_Cliente`),
+                  KEY `ID_Empleado` (`ID_Empleado`)
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Base de datos: 'fact10'
+    -->
+    <database name="fact10">
+        <!-- Tabla anulacion_venta -->
+        <!-- Tabla cliente -->
+        <!-- Tabla detalle_venta -->
+        <!-- Tabla empleado -->
+        <table name="empleado">
+            <column name="N_Documento_Empleado">123456789</column>
+            <column name="ID_Tipo_Documento">5</column>
+            <column name="Nom_Empleado">TATAN</column>
+            <column name="Telefono_Empleado">3124887598</column>
+            <column name="Email_Empleado">este@hotmail.com</column>
+            <column name="Direccion_Empleado">calle 45 67 45</column>
+            <column name="Nom_Usuario">tatan123</column>
+            <column name="Password">123</column>
+            <column name="ID_Empleado">1</column>
+        </table>
+        <table name="empleado">
+            <column name="N_Documento_Empleado">789456123</column>
+            <column name="ID_Tipo_Documento">3</column>
+            <column name="Nom_Empleado">Marcela</column>
+            <column name="Telefono_Empleado">3152894568</column>
+            <column name="Email_Empleado">tambien@hotmail.es</column>
+            <column name="Direccion_Empleado">diagona102 67 45</column>
+            <column name="Nom_Usuario">Marce</column>
+            <column name="Password">159159</column>
+            <column name="ID_Empleado">2</column>
+        </table>
+        <table name="empleado">
+            <column name="N_Documento_Empleado">123123123</column>
+            <column name="ID_Tipo_Documento">5</column>
+            <column name="Nom_Empleado">Aura</column>
+            <column name="Telefono_Empleado">3124785962</column>
+            <column name="Email_Empleado">cual@yahoo.com</column>
+            <column name="Direccion_Empleado">calle 170 01 24</column>
+            <column name="Nom_Usuario">aura01</column>
+            <column name="Password">123456</column>
+            <column name="ID_Empleado">3</column>
+        </table>
+        <!-- Tabla producto -->
+        <!-- Tabla proveedor -->
+        <!-- Tabla tipo_documento -->
+        <!-- Tabla venta -->
+    </database>
+</pma_xml_export>
